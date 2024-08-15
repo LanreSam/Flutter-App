@@ -2,17 +2,19 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(MaterialApp(
-    home: Scaffold(
-
-    ),
+    home: NinjaCard(),
   ));
 }
 
-class MyWidget extends StatelessWidget {
-  const MyWidget({super.key});
+class NinjaCard extends StatelessWidget {
+  const NinjaCard({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Ninja ID Card'),
+      ),
+    );
   }
 }
