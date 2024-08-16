@@ -22,17 +22,47 @@ class _QuoteListState extends State<QuoteList> {
     Quote(text: 'In the end, we will remember not the words of our enemies, but the silence of our friends.', author: '— Martin Luther King Jr.'),
   ];
 
+  Widget quoteTemplate(quote){
+    return Card(
+      margin: EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 0.0),
+      child: Column(
+        children: [
+          Text(
+            quote.text,
+            style: TextStyle(
+              color: Colors.grey[600],
+              fontSize: 18.0,
+            ),
+          ),
+          SizedBox(height: 8.0,),
+          Text(
+            quote.author,
+            style: TextStyle(
+              fontSize: 14.0,
+              color: Colors.grey[800],
+            ),
+          )
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
         title: Text('Awesome Quotes'),
-        backgroundColor: Colors.pinkAccent,
+        backgroundColor: Colors.pink,
+        foregroundColor: Colors.white,
         centerTitle: true,
       ),
-      body: Column(
-        children: quotes.map((singleQuote) => Text('${singleQuote.text} ${singleQuote.author}')).toList(),
+      body: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: quotes.map((singleQuote) => quoteTemplate(singleQuote)).toList(),
+        ),
       ),
     );
   }
