@@ -46,7 +46,7 @@ class NinjaCard extends StatelessWidget {
             
             //Another Text
             Text(
-              'NAME',
+              'CURRENT NINJA LEVEL',
               style: TextStyle(
                 color: Colors.grey,
                 letterSpacing: 2.0,
@@ -54,7 +54,7 @@ class NinjaCard extends StatelessWidget {
             ),
             SizedBox(height: 3.0,),
             Text(
-              'Chun-li',
+              '8',
               style: TextStyle(
                 color: Colors.amberAccent[200],
                 letterSpacing: 2.0,
@@ -62,6 +62,16 @@ class NinjaCard extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
+            SizedBox(height: 30.0,),
+
+            Row(
+              children: [
+                Icon(
+                  Icons.email,
+                  color: Colors.grey[400],
+                ),
+              ],
+            )
           ],
         ),
       ),
