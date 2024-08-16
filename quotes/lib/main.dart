@@ -23,28 +23,7 @@ class _QuoteListState extends State<QuoteList> {
   ];
 
   Widget quoteTemplate(quote){
-    return Card(
-      margin: EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 0.0),
-      child: Column(
-        children: [
-          Text(
-            quote.text,
-            style: TextStyle(
-              color: Colors.grey[600],
-              fontSize: 18.0,
-            ),
-          ),
-          SizedBox(height: 8.0,),
-          Text(
-            quote.author,
-            style: TextStyle(
-              fontSize: 14.0,
-              color: Colors.grey[800],
-            ),
-          )
-        ],
-      ),
-    );
+    return QuoteCard();
   }
 
   @override
@@ -57,11 +36,40 @@ class _QuoteListState extends State<QuoteList> {
         foregroundColor: Colors.white,
         centerTitle: true,
       ),
-      body: Padding(
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: quotes.map((singleQuote) => quoteTemplate(singleQuote)).toList(),
+      ),
+    );
+  }
+}
+
+class QuoteCard extends StatelessWidget {
+  
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      margin: EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 0.0),
+      child: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: quotes.map((singleQuote) => quoteTemplate(singleQuote)).toList(),
+          children: [
+            Text(
+              quote.text,
+              style: TextStyle(
+                color: Colors.grey[600],
+                fontSize: 18.0,
+              ),
+            ),
+            SizedBox(height: 8.0,),
+            Text(
+              quote.author,
+              style: TextStyle(
+                fontSize: 14.0,
+                color: Colors.grey[800],
+              ),
+            )
+          ],
         ),
       ),
     );
