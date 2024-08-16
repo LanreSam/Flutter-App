@@ -22,9 +22,6 @@ class _QuoteListState extends State<QuoteList> {
     Quote(text: 'In the end, we will remember not the words of our enemies, but the silence of our friends.', author: '— Martin Luther King Jr.'),
   ];
 
-  Widget quoteTemplate(quote){
-    return QuoteCard();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -38,14 +35,16 @@ class _QuoteListState extends State<QuoteList> {
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: quotes.map((singleQuote) => quoteTemplate(singleQuote)).toList(),
+        children: quotes.map((singleQuote) => QuoteCard(quote: singleQuote)).toList(),
       ),
     );
   }
 }
 
 class QuoteCard extends StatelessWidget {
-  
+  final Quote quote;
+  QuoteCard({ required this.quote });
+
   @override
   Widget build(BuildContext context) {
     return Card(
