@@ -70,6 +70,15 @@ class NinjaCard extends StatelessWidget {
                   Icons.email,
                   color: Colors.grey[400],
                 ),
+                SizedBox(width: 10.0,),
+                Text(
+                  'chun-li@theninja.co.uk',
+                  style: TextStyle(
+                    color: Colors.grey[400],
+                    fontSize: 18.0,
+                    letterSpacing: 1.0,
+                  ),
+                ),
               ],
             )
           ],
