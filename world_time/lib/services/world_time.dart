@@ -11,9 +11,10 @@ class WorldTime {
 
   Future<void> getTime() async {
 
+    //Error Handling incase somthing goes wrong while fetching the data from the endpoint.
     try {
       // URL to fetch the world time
-      String newUrl = 'http://worldtimeapi.org/api/timezone/$url';
+      String newUrl = 'http://worldtimeapi.org/api/timezones/$url';
 
       //Parses the Url to standard URI
       Uri uri = Uri.parse(newUrl);
@@ -38,7 +39,8 @@ class WorldTime {
       time = now.toString();
 
     } catch (e) {
-      
+      print('Caught Error: $e'); // Prints out the error in the console
+      time = 'Could not fetch data'; //Updates the time variable and shows this error message in the application.
     }
   }
 }
