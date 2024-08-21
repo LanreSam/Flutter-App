@@ -14,7 +14,7 @@ class WorldTime {
     //Error Handling incase somthing goes wrong while fetching the data from the endpoint.
     try {
       // URL to fetch the world time
-      String newUrl = 'http://worldtimeapi.org/api/timezones/$url';
+      String newUrl = 'http://worldtimeapi.org/api/timezone/$url';
 
       //Parses the Url to standard URI
       Uri uri = Uri.parse(newUrl);
