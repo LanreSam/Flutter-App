@@ -48,7 +48,7 @@ class _NinjaCardState extends State<NinjaCard> {
             //added image
             Center(
               child: CircleAvatar(
-                backgroundImage: AssetImage('assets/ninja-1.jpg'),
+                backgroundImage: AssetImage('assets/logo.png'),
                 radius: 40.0,
               ),
             ),
@@ -57,6 +57,7 @@ class _NinjaCardState extends State<NinjaCard> {
               color: Colors.grey[800],
             ),
             SizedBox(height: 30.0,),
+            //start
 
             //Name of ninja
             Text(
@@ -113,6 +114,10 @@ class _NinjaCardState extends State<NinjaCard> {
                     letterSpacing: 1.0,
                   ),
                 ),
+                Image(
+                  image: AssetImage('assets/logo.png'),
+                  width: 90.0,
+                )
               ],
             )
           ],

@@ -8,21 +8,27 @@ class WorldTime {
   String? flag; //url to an asset file icon
   String? url; //url for the api property
 
+  WorldTime({this.location, this.flag, this.url});
 
-  //String newUrl = 'http://worldtimeapi.org/api/timezone/$url';
 
-  // void getTime() async{
-  //   Uri uri = Uri.parse(newUrl);
-  //   Response response =  await get(uri);
-  //   Map data = jsonDecode(response.body);
+
+  Future<void> getTime() async{
+    String newUrl = 'http://worldtimeapi.org/api/timezone/$url';
+
+
+    Uri uri = Uri.parse(newUrl);
+    Response response =  await get(uri);
+    Map data = jsonDecode(response.body);
     
 
-  //   // get properties
-  //   String datatime = data['datetime'];
-  //   String offset = data['utc_offset'].substring(1,3);
+    // get properties
+    String datatime = data['datetime'];
+    String offset = data['utc_offset'].substring(1,3);
 
-  //   DateTime now = DateTime.parse(datatime);
-  //   now = now.add(Duration(hours: int.parse(offset)));
-  //   print(now);
-  // }
+    DateTime now = DateTime.parse(datatime);
+    now = now.add(Duration(hours: int.parse(offset)));
+    
+    //set time property
+    time = now.toString();
+  }
 }
