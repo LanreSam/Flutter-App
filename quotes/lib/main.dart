@@ -34,6 +34,7 @@ class _QuoteListState extends State<QuoteList> {
         foregroundColor: Colors.white,
         centerTitle: true,
       ),
+      //Body of your code
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: quotes.map((singleQuote) => QuoteCard(
