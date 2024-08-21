@@ -8,6 +8,21 @@ class ChooseLocation extends StatefulWidget {
 }
 
 class _ChooseLocationState extends State<ChooseLocation> {
+
+  void getData() {
+    //simulate getting a user's data from DB
+    Future.delayed(Duration(seconds: 3), () {
+      print('Lanre');
+    });
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +38,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
         centerTitle: true,
       ),
       backgroundColor: Colors.grey[200],
-      body: Text('Choose Location Screen'),
+      
     );
   }
 }
