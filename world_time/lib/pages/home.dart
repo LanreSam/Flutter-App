@@ -12,9 +12,13 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: TextButton(
-          onPressed: (){}, 
-          child: Icon(Icons.edit_location),
+        child: TextButton.icon(
+          onPressed: (){
+            Navigator.pushNamed(context, '/location');
+          }, 
+          icon: Icon(Icons.edit_location),
+          label: Text("Edit Location"),
+
         ),
       ),
     );
