@@ -3,7 +3,7 @@ import 'quote.dart';
 import 'quote_card.dart';
 
 void main() {
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
     home: QuoteList(),
   ));
 }
@@ -29,7 +29,7 @@ class _QuoteListState extends State<QuoteList> {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
-        title: Text('Awesome Quotes'),
+        title: const Text('Awesome Quotes'),
         backgroundColor: Colors.pink,
         foregroundColor: Colors.white,
         centerTitle: true,
