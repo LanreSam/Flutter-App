@@ -20,14 +20,20 @@ class _HomeState extends State<Home> {
       setState(() {
         data = arguments;
         print(data);
-
-        //set background image
-        String bgImage = data['isDayTime'] ? 'day.svg' : 'night.svg';
       });
     }
 
+    //set background image
+    //String bgImage = data['isDayTime'] ? 'day.jpg' : 'night.jpg';
+
     return Scaffold(
       body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/day.jpg'),
+            fit: BoxFit.cover,
+          ),
+        ),
         child: Padding(
           padding: const EdgeInsets.fromLTRB(0, 120, 0, 0),
           child: SafeArea(
