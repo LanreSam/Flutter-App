@@ -24,13 +24,15 @@ class _HomeState extends State<Home> {
     }
 
     //set background image
-    //String bgImage = data['isDayTime'] ? 'day.jpg' : 'night.jpg';
+    String bgImage = data['isDayTime'] ? 'day.jpg' : 'night.jpg';
+    Color? bgColor = data['isDayTime'] ? Colors.amber : Colors.grey[800];
 
     return Scaffold(
+      backgroundColor: bgColor,
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/day.jpg'),
+            image: AssetImage('assets/$bgImage'),
             fit: BoxFit.cover,
           ),
         ),
