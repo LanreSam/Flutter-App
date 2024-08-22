@@ -35,22 +35,16 @@ class _QuoteListState extends State<QuoteList> {
         foregroundColor: Colors.white,
         centerTitle: true,
       ),
-      //Body of your code
       body: Column(
-        // crossAxisAlignment: CrossAxisAlignment.stretch,
-        // children: quotes.map((singleQuote) => QuoteCard(
-        //   quote: singleQuote,
-        //   delete: () {
-        //     setState(() {
-        //       quotes.remove(singleQuote);
-        //     });
-        //   },
-        // )).toList(),
-        children: [
-          Image(
-            image: AssetImage('assets/logo.png'),
-          )
-        ],
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: quotes.map((singleQuote) => QuoteCard(
+          quote: singleQuote,
+          delete: () {
+            setState(() {
+              quotes.remove(singleQuote);
+            });
+          },
+        )).toList(),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
