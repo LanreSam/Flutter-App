@@ -18,7 +18,7 @@ class _HomeState extends State<Home> {
 
     if (arguments != null) {
       setState(() {
-        data = arguments;
+        data = data.isNotEmpty ? data : arguments;
         print(data);
       });
     }
@@ -42,8 +42,16 @@ class _HomeState extends State<Home> {
             child: Column(
               children: [
                 TextButton.icon(
-                  onPressed: (){
-                    Navigator.pushNamed(context, '/location');
+                  onPressed: () async{
+                    dynamic result =  await Navigator.pushNamed(context, '/location');
+                    setState(() {
+                      data = {
+                        'time': result['time'],
+                        'location': result['location'],
+                        'isDayTime': result['isDayTime'],
+                        'flag': result['flag'],
+                      };
+                    });
                   }, 
                   icon: Icon(
                     Icons.edit_location,

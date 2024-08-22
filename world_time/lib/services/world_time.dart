@@ -4,7 +4,7 @@ import 'dart:convert';
 import 'package:intl/intl.dart';
 
 class WorldTime {
-  final String? location; //Location name for the UI
+  String? location; //Location name for the UI
   String? time; //The time in that location
   String? flag; //url to an asset file icon
   String? url; //url for the api property
