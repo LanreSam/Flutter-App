@@ -9,30 +9,34 @@ class Loading extends StatefulWidget {
 }
 
 class _LoadingState extends State<Loading> {
-  
-  String time = 'Loading...';
 
+  // Function to set set up the time to the location you want
   void setUpWorldTime () async {
+    // Creating an instance of the world time function previously created in
+    // the world_time.dart file inside the services folder.
     WorldTime instance = WorldTime(location: 'Berlin', flag: 'germany.png', url: 'Europe/Berlin');
     await instance.getTime();
-    print(instance.time);
-    setState(() {
-      time = instance.time!;
-    });
+
+    // Navigates to the home page once the await action above has been completed.
+    // It doesn't stack on top of the previous screen, rather, it closes that 
+    // Unlike the Navigator.pushNamed() that stacks things on each other.
+    Navigator.pushReplacementNamed(context, '/home');
   }
 
+  // Creates an initial state that runs once anytime we build the program.
   @override
   void initState() {
     super.initState();
     setUpWorldTime();
   }
 
+  // The build widget of the application.
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.all(50.0),
-        child: Text(time),
+        child: Text('Loading...'),
       ),
     );
   }
