@@ -20,7 +20,11 @@ class _LoadingState extends State<Loading> {
     // Navigates to the home page once the await action above has been completed.
     // It doesn't stack on top of the previous screen, rather, it closes that 
     // Unlike the Navigator.pushNamed() that stacks things on each other.
-    Navigator.pushReplacementNamed(context, '/home');
+    Navigator.pushReplacementNamed(context, '/home', arguments: {
+      'location': instance.location,
+      'time': instance.time,
+      'flag': instance.flag,
+    });
   }
 
   // Creates an initial state that runs once anytime we build the program.
