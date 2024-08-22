@@ -19,7 +19,6 @@ class _HomeState extends State<Home> {
     if (arguments != null) {
       setState(() {
         data = data.isNotEmpty ? data : arguments;
-        print(data);
       });
     }
 
