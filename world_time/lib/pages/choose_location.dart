@@ -41,10 +41,16 @@ class _ChooseLocationState extends State<ChooseLocation> {
         itemBuilder: (context, index) {
           // Ensure that locations[index].location is not null
           final location = locations[index];
-          return Card(
-            child: ListTile(
-              onTap: (){},
-              title: Text(location.location ?? 'Unknown Location'),
+          return Padding(
+            padding: const EdgeInsets.symmetric(vertical: 1.0, horizontal: 4.0,),
+            child: Card(
+              child: ListTile(
+                onTap: (){},
+                title: Text(location.location ?? 'Unknown Location'),
+                leading: CircleAvatar(
+                  backgroundImage: AssetImage('assets/${location.flag}'),
+                ),
+              ),
             ),
           );
         },
